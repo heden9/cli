@@ -1,6 +1,6 @@
 {
   "prefix": "dcd-cli",
   "remotes": {
-
+    "react-default": "gitr:motor/fe/car_classify"
   }
 }

@@ -34,10 +34,14 @@ if (exists(rawName)) {
       }
     })
     .catch(logger.fatal);
+}else {
+  run();
 }
 
 async function run() {
   const answer = await ask();
-  const res = await downloadTmp('w771854332/dvaSSR', rawName);
+  const regx = /^git\:\/\/github\.com\/(.+)\.git/;
+  const url = answer.url.match(regx)[1];
+  const res = await downloadTmp(url, rawName);
   console.log(res);
 }
