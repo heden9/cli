@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+const download = require("download-git-repo");
+const program = require("commander");
+const path = require("path");
+const chalk = require("chalk");
+const tildify = require("tildify");
+const home = require("user-home");
+const inquirer = require("inquirer");
+const exists = require("fs").existsSync;
+const logger = require("../lib/logger");
+const { ask } = require("../lib/ask");
+const { downloadTmp } = require('../lib/api')
+program.usage("[project-name]");
+
+(function help() {
+  program.parse(process.argv);
+  if (program.args.length < 1) return program.help();
+})();
+
+const rawName = program.args[0];
+if (exists(rawName)) {
+  inquirer
+    .prompt([
+      {
+        type: "confirm",
+        message: `Target directory ${chalk.yellow(rawName)} exists. Continue?`,
+        name: "ok"
+      }
+    ])
+    .then(answer => {
+      if (answer.ok) {
+        run();
+      }
+    })
+    .catch(logger.fatal);
+}
+
+async function run() {
+  const answer = await ask();
+  const res = await downloadTmp('w771854332/dvaSSR', rawName);
+  console.log(res);
+}

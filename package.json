@@ -1,0 +1,23 @@
+{
+  "name": "dcd-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "dcd": "bin/dcd",
+    "vue-init": "bin/dcd-init"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.1",
+    "commander": "^2.15.1",
+    "download-git-repo": "^1.0.2",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^5.2.0",
+    "inquirer-autocomplete-prompt": "^0.12.2",
+    "lodash": "^4.17.10",
+    "ora": "^2.0.0",
+    "tildify": "^1.2.0",
+    "user-home": "^2.0.0"
+  }
+}
