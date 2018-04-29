@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-
 const download = require("download-git-repo");
 const program = require("commander");
 const path = require("path");
@@ -17,7 +16,6 @@ const {
   completed
 } = require("../lib/ask");
 program.usage("[project-name]");
-
 
 (function help() {
   program.parse(process.argv);
