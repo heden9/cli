@@ -1,6 +1,6 @@
 {
   "prefix": "dcd-cli",
   "remotes": {
-    "dvaSSR": "https://github.com/w771854332/dvaSSR.git"
+    "dcd-boilerplate": "gitr:motor/fe/dcd-boilerplate"
   }
 }
